@@ -3,3 +3,9 @@ pandas
 matplotlib
 seaborn
 pymongo
+nltk
+torch
+datasets
+evaluate
+transformers
+scikit-learn
