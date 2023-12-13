@@ -9,4 +9,5 @@ datasets
 evaluate
 transformers
 scikit-learn
--e .
+python-dotenv
+#-e .
