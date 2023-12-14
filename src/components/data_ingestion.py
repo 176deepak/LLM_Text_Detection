@@ -22,4 +22,4 @@ class DataIngestion:
         # Save the data as a CSV file at the specified location
         texts_df.to_csv(self.config.text_data_file, index=False)
         # Log information about the successful data save
-        logging.info(f"texts data saved successfully at {self.config.data_file}")
+        logging.info(f"texts data saved successfully at {self.config.text_data_file}")

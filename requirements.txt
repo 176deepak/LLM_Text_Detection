@@ -10,4 +10,5 @@ evaluate
 transformers
 scikit-learn
 python-dotenv
+python-box
 #-e .

@@ -41,8 +41,9 @@ def db_conn():
         # Get MongoDB connection details from environment variables
         host = os.getenv("host")
         port = os.getenv("port")
+        print(host, port)
         # Create the connection string
-        connection_str = "mongodb://"+host+":"+port
+        connection_str = f"mongodb://{host}:{port}"
         # Establish the MongoDB client connection
         client = mongo.MongoClient(connection_str)
         # Log successful database connection

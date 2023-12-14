@@ -162,3 +162,4 @@ cython_debug/
 venv/
 data/
 project_structure.excalidraw
+artifacts/
