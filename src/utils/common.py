@@ -1,7 +1,10 @@
 # Import necessary libraries
 import os
 import sys
+import yaml
 import pandas as pd
+from pathlib import Path
+from box import ConfigBox
 import pymongo as mongo
 from src.logger import logging
 from src.exception import CustomException
@@ -9,6 +12,23 @@ from dotenv import load_dotenv
 
 # Load environment variables from a .env file
 load_dotenv()
+
+
+def read_yaml(path):
+    try:
+        with open(path) as yaml_file:
+            content = yaml.safe_load(yaml_file)
+            logging.info(f"yaml file: {path} loaded successfully")
+            return ConfigBox(content)
+    except Exception as e:
+        raise e
+    
+
+def create_dirs(paths:list):
+    for path in paths:
+        path = Path(path)
+        os.makedirs(path, exist_ok=True)
+        logging.info(f"Created directory at {path}")
 
 
 # Function to establish a MongoDB connection

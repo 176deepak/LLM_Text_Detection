@@ -1,0 +1,21 @@
+# Directory where artifacts will be stored
+artifacts_dir: artifacts
+
+# Data Ingestion Configuration
+data_ingestion:
+    # Directory for storing ingested data
+    ingestion_dir: artifacts/data_ingestion
+    # File containing the raw data for ingestion
+    data_file: artifacts/data_ingestion/texts.csv
+
+# Data Transformation Configuration
+data_transformation:
+    # Directory for storing transformed data
+    transformation_dir: artifacts/data_transformation
+    # Directory for storing cleaned data after transformation
+    cleaned_data_dir: artifacts/data_transformation/cleaned_texts.csv
+
+# Model Training Configuration
+model_training:
+    # Directory for storing model training artifacts
+    model_trainer_dir: artifacts/model_trainer
