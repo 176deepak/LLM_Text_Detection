@@ -1,7 +1,7 @@
 # LLM Text Detection WebApp 
 
 ## Project structure understanding:
-###Project-|
+### Project-|
 ###        | README.md:
 ###        | .gitignore:
 ###        | setup.py: 

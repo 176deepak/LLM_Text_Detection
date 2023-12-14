@@ -20,6 +20,6 @@ class DataIngestion:
         # Get data from a specified collection using the common utility function
         texts_df = get_data(coll_name=os.getenv("collection"))
         # Save the data as a CSV file at the specified location
-        texts_df.to_csv(self.config.data_file, index=False)
+        texts_df.to_csv(self.config.text_data_file, index=False)
         # Log information about the successful data save
         logging.info(f"texts data saved successfully at {self.config.data_file}")

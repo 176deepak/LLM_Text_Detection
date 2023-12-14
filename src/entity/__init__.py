@@ -1,18 +1,15 @@
+# Import necessary modules
 from pathlib import Path
 from dataclasses import dataclass
 
-
+# Define a data class for DataIngestion configuration
 @dataclass(frozen=True)
 class DataIngestionConfig:
+    # Path to the directory where data will be stored
     data_dir: Path
+    # Path to the file containing text data within the specified data directory
     text_data_file: Path
 
-
-# @dataclass(frozen=True)
-# class DataValidationConfig:
-#     root_dir: Path
-#     STATUS_FILE: str
-#     ALL_REQUIRED_FILES: list
 
 
 # @dataclass(frozen=True)

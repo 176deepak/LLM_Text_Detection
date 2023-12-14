@@ -14,16 +14,20 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
+# Function to read a config yaml files 
 def read_yaml(path):
+    # trying to open a file
     try:
         with open(path) as yaml_file:
             content = yaml.safe_load(yaml_file)
             logging.info(f"yaml file: {path} loaded successfully")
+            # return the content of the file
             return ConfigBox(content)
     except Exception as e:
         raise e
     
 
+# Function to create directories 
 def create_dirs(paths:list):
     for path in paths:
         path = Path(path)
