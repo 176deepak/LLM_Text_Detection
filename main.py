@@ -1,3 +1,5 @@
+# Import necessary modules and classes
+import sys
 from src.pipeline.data_ingestion_pipeline import DataIngestionTraining
 from src.pipeline.data_transformation_pipeline import DataTransformationPipeline
 from src.pipeline.data_validation_pipeline import DataValidator
@@ -5,42 +7,60 @@ from src.pipeline.model_training_pipeline import ModelTrainerPipeline
 from src.logger import logging
 from src.exception import CustomException
 
+# Define a constant for the stage name
+STAGE_NAME = "Data Ingestion"
 
-# STAGE_NAME = "Data Ingestion"
-# try:
-#     logging.info(f"--------------------{STAGE_NAME} start--------------------")
-#     obj = DataIngestionTraining()
-#     ingest_data_path = obj.main()
-#     logging.info(f"------------------------{STAGE_NAME} end--------------------")
-# except Exception as e:
-#     raise e
-
-
-# STAGE_NAME = "Data Transformation"
-# try:
-#     logging.info(f"--------------------{STAGE_NAME} start--------------------")
-#     obj = DataTransformationPipeline(ingest_data_path)
-#     cleaned_text_path = obj.main()
-#     logging.info(f"------------------------{STAGE_NAME} end--------------------")
-# except Exception as e:
-#     raise e
-
-
-# STAGE_NAME = "Data Validation"
-# try:
-#     logging.info(f"--------------------{STAGE_NAME} start--------------------")
-#     obj = DataValidator(cleaned_text_path)
-#     obj.main()
-#     logging.info(f"------------------------{STAGE_NAME} end--------------------")
-# except Exception as e:
-#     raise e
-#cleaned_text_path[0], cleaned_text_path[1]
-
-STAGE_NAME = "Model Trainer"
+# Data Ingestion Stage
 try:
     logging.info(f"--------------------{STAGE_NAME} start--------------------")
-    obj = ModelTrainerPipeline('artifacts/data_transformation/train_texts.csv', 'artifacts/data_transformation/validation_texts.csv')
+    # Instantiate the DataIngestionTraining class
+    obj = DataIngestionTraining()
+    # Execute the main method to perform data ingestion
+    ingest_data_path = obj.main()
+    logging.info(f"------------------------{STAGE_NAME} end--------------------")
+except Exception as e:
+    # Log and raise an exception if an error occurs during data ingestion
+    logging.error(f"Error in {STAGE_NAME}: {str(e)}")
+    raise CustomException(e, sys)
+
+# Data Transformation Stage
+STAGE_NAME = "Data Transformation"
+try:
+    logging.info(f"--------------------{STAGE_NAME} start--------------------")
+    # Instantiate the DataTransformationPipeline class with the path to the ingested data
+    obj = DataTransformationPipeline(ingest_data_path)
+    # Execute the main method to perform data transformation
+    cleaned_text_path = obj.main()
+    logging.info(f"------------------------{STAGE_NAME} end--------------------")
+except Exception as e:
+    # Log and raise an exception if an error occurs during data transformation
+    logging.error(f"Error in {STAGE_NAME}: {str(e)}")
+    raise CustomException(e, sys)
+
+# Data Validation Stage
+STAGE_NAME = "Data Validation"
+try:
+    logging.info(f"--------------------{STAGE_NAME} start--------------------")
+    # Instantiate the DataValidator class with the path to the cleaned text data
+    obj = DataValidator(cleaned_text_path)
+    # Execute the main method to perform data validation
     obj.main()
     logging.info(f"------------------------{STAGE_NAME} end--------------------")
 except Exception as e:
-    raise e
+    # Log and raise an exception if an error occurs during data validation
+    logging.error(f"Error in {STAGE_NAME}: {str(e)}")
+    raise CustomException(e, sys)
+
+# Model Training Stage
+STAGE_NAME = "Model Trainer"
+try:
+    logging.info(f"--------------------{STAGE_NAME} start--------------------")
+    # Instantiate the ModelTrainerPipeline class with the paths to the cleaned text data
+    obj = ModelTrainerPipeline(cleaned_text_path[0], cleaned_text_path[1])
+    # Execute the main method to perform model training
+    obj.main()
+    logging.info(f"------------------------{STAGE_NAME} end--------------------")
+except Exception as e:
+    # Log and raise an exception if an error occurs during model training
+    logging.error(f"Error in {STAGE_NAME}: {str(e)}")
+    raise CustomException(e, sys)

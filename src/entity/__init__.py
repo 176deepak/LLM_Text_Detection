@@ -13,8 +13,11 @@ class DataIngestionConfig:
 
 @dataclass(frozen=True)
 class DataTransformationConfig:
+    # Path to the directory where cleaned data will be stored
     cleaned_data_dir: Path
+    # Path to the file containing cleaned text data within the specified cleaned data directory
     cleaned_text_file: Path
+    # Paths to separate text files for training, testing, and validation
     train_text_file: Path
     test_text_file: Path
     valid_text_file: Path
@@ -22,29 +25,45 @@ class DataTransformationConfig:
 
 @dataclass
 class DataValidationConfig:
+    # Path to the directory where validation data will be stored
     validation_dir: Path
+    # Path to the file containing validation status information
     status_filepath: Path
+    # List of required files for validation
     required_files: list
 
 
 @dataclass(frozen=True)
 class ModelTrainerConfig:
+    # Root directory for the model trainer
     root_dir: Path
+    # Path to the directory where the trained model will be saved
     trained_model_dir: Path
+    # Random seed for reproducibility
     random_seed: int
+    # Path to the pre-trained model checkpoint
     model_ckpt: str
+    # Number of labels in the classification task
     num_labels: int
+    # Learning rate for the optimizer
     learning_rate: float
+    # Number of training epochs
     num_train_epochs: int
+    # Batch size for training
     train_batch_size: int
+    # Number of warm-up steps for the learning rate scheduler
     num_warmup_steps: int
     
-    
-
+# Data class for ModelEvaluationConfig (currently commented out)
 # @dataclass(frozen=True)
 # class ModelEvaluationConfig:
+#     # Root directory for model evaluation
 #     root_dir: Path
+#     # Path to the data file used for evaluation
 #     data_path: Path
+#     # Path to the trained model for evaluation
 #     model_path: Path
+#     # Path to the tokenizer used for evaluation
 #     tokenizer_path: Path
+#     # Name of the metric file
 #     metric_file_name: Path

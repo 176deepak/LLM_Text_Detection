@@ -122,24 +122,20 @@ def tokenize_data(data, ckpt):
 
         # initialize tokenizer object
         tokenizer = AutoTokenizer.from_pretrained(ckpt)
-
+        
         # function which convert text into tokens 
         def tokenize_function(example):
             return tokenizer(example['text'], truncation=True)
-
+        
         # apply tokenizer on all texts
         tokenized_datasets = data.map(tokenize_function, batched=True)
         data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
-
         # remove unwanted columns from tokenized dataset
         tokenized_datasets = tokenized_datasets.remove_columns(["text"])
-
         # rename the "generated" to "labels"
         tokenized_datasets = tokenized_datasets.rename_column("generated", "labels")
-
         # Set the format of the datasets so they return PyTorch tensors instead of lists
         tokenized_datasets.set_format("torch")
-
         return data_collator, tokenized_datasets
     except Exception as e:
         raise CustomException(e, sys)
