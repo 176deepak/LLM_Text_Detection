@@ -19,3 +19,14 @@ class ConfigurationManager:
         )
 
         return data_ingestion_config
+    
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config.data_transformation
+        create_dirs([config.transformation_dir])
+
+        data_transformation_config = DataTransformationConfig(
+            cleaned_data_dir = config.transformation_dir,
+            cleaned_text_file = config.cleaned_data_dir
+        )
+
+        return data_transformation_config

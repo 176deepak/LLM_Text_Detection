@@ -11,12 +11,10 @@ class DataIngestionConfig:
     text_data_file: Path
 
 
-
-# @dataclass(frozen=True)
-# class DataTransformationConfig:
-#     root_dir: Path
-#     data_path: Path
-#     tokenizer_name: Path
+@dataclass(frozen=True)
+class DataTransformationConfig:
+    cleaned_data_dir: Path
+    cleaned_text_file: Path
 
 
 # @dataclass(frozen=True)

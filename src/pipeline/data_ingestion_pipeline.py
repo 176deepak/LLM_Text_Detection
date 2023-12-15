@@ -18,3 +18,5 @@ class DataIngestionTraining:
         data_ingestion = DataIngestion(data_ingestion_config)
         # Call the download_file method to perform data ingestion
         data_ingestion.download_file()
+        # return the ingest data path
+        return data_ingestion_config.text_data_file
