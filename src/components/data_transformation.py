@@ -9,6 +9,7 @@ from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize
 from src.logger import logging
 from src.entity import DataTransformationConfig
+from sklearn.model_selection import train_test_split
 
 # Download NLTK resources
 nltk.download('stopwords')
@@ -76,4 +77,14 @@ class DataTransformation:
         logging.info("Data cleaning/transformation end...")
         # Save the cleaned text to a new CSV file
         logging.info(f"Cleaned text saved at {self.config.cleaned_text_file}...")
+        # Shuffle the dataset
+        df = df.sample(frac=1, random_state=42, ignore_index=True)
         df.to_csv(self.config.cleaned_text_file, index=False)
+
+        # Split the cleaned text data into train, test and validation splits
+        df_train, df_test  = train_test_split(df, random_state=42, test_size=0.3)
+        df_valid, df_test = train_test_split(df_test, random_state=42, test_size=0.5)
+        # Save the splits into drive
+        df_train.to_csv(self.config.train_text_file, index=False)
+        df_test.to_csv(self.config.test_text_file, index=False)
+        df_valid.to_csv(self.config.valid_text_file, index=False)

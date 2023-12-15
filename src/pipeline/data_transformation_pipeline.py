@@ -20,4 +20,4 @@ class DataTransformationPipeline:
         # Perform text transformation using the DataTransformation instance
         data_transformation.transform_text()
         # Return the path to the cleaned text file generated during transformation
-        return data_transformation_config.cleaned_text_file
+        return [data_transformation_config.train_text_file, data_transformation_config.test_text_file, data_transformation_config.valid_text_file]
