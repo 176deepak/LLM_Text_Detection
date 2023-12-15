@@ -3,12 +3,17 @@ import os
 import sys
 import yaml
 import pandas as pd
+import datasets
 from pathlib import Path
 from box import ConfigBox
 import pymongo as mongo
 from src.logger import logging
 from src.exception import CustomException
 from dotenv import load_dotenv
+from transformers import (
+    AutoTokenizer, 
+    DataCollatorWithPadding, 
+)
 
 # Load environment variables from a .env file
 load_dotenv()
@@ -75,4 +80,66 @@ def get_data(coll_name):
         return df
     except Exception as e:
         # Raise a custom exception if there's an error during data retrieval or conversion
+        raise CustomException(e, sys)
+    
+
+def data_object(train_data, test_data):
+    try:
+        train_texts = list(train_data['text'])
+        train_labels = list(train_data['generated'])
+
+        valid_texts = list(test_data['text'])
+        valid_labels = list(test_data['generated'])
+        
+        # create data dictionary
+        train_data_dict = {
+            'text': train_texts,
+            'generated': train_labels,
+        }
+        validation_data_dict = {
+            'text': valid_texts,
+            'generated': valid_labels,
+        }
+
+        # create data object for both train split and validation split
+        train_dataset = datasets.Dataset.from_dict(train_data_dict)
+        validation_dataset = datasets.Dataset.from_dict(validation_data_dict)
+
+        # wraps up both the data objects into DatasetDict object
+        data = datasets.DatasetDict({
+            "train": train_dataset,
+            "validation": validation_dataset,
+        })
+        return data
+    
+    except Exception as e:
+        raise CustomException(e, sys)
+
+
+def tokenize_data(data, ckpt):
+    try:
+        # convert the texts into tokens using transformers AutoTokenizer
+
+        # initialize tokenizer object
+        tokenizer = AutoTokenizer.from_pretrained(ckpt)
+
+        # function which convert text into tokens 
+        def tokenize_function(example):
+            return tokenizer(example['text'], truncation=True)
+
+        # apply tokenizer on all texts
+        tokenized_datasets = data.map(tokenize_function, batched=True)
+        data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
+
+        # remove unwanted columns from tokenized dataset
+        tokenized_datasets = tokenized_datasets.remove_columns(["text"])
+
+        # rename the "generated" to "labels"
+        tokenized_datasets = tokenized_datasets.rename_column("generated", "labels")
+
+        # Set the format of the datasets so they return PyTorch tensors instead of lists
+        tokenized_datasets.set_format("torch")
+
+        return data_collator, tokenized_datasets
+    except Exception as e:
         raise CustomException(e, sys)
