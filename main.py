@@ -18,7 +18,7 @@ except Exception as e:
 STAGE_NAME = "Data Transformation"
 try:
     logging.info(f"--------------------{STAGE_NAME} start--------------------")
-    obj = DataTransformationPipeline('artifacts/data_ingestion/texts.csv')
+    obj = DataTransformationPipeline(ingest_data_path)
     obj.main()
     logging.info(f"------------------------{STAGE_NAME} end--------------------")
 except Exception as e:
