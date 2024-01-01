@@ -16,4 +16,6 @@ class ModelTrainerPipeline:
         # and the model training configuration
         trainer = ModelTrainer(self.train_data_path, self.valid_data_path, model_training_config)
         # Execute the model training process
-        trainer.train_model()
+        eval_dataloader = trainer.train_model()
+        # return the evaluation data and trained model path
+        return (eval_dataloader, model_training_config.trained_model_dir)

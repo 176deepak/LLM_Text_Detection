@@ -25,7 +25,7 @@ class ModelTrainer:
         valid_df = pd.read_csv(self.valid_texts_path)
 
         # Create a data object for tokenization
-        data = data_object(train_df, valid_df)
+        data = data_object(train_df.iloc[:8, :], valid_df.iloc[:8, :])
         # Tokenize the data using provided model checkpoint
         data_collator, tokenized_data = tokenize_data(data, self.config.model_ckpt)
         # Define data loaders for further processing
@@ -81,3 +81,6 @@ class ModelTrainer:
         model_save_path = self.config.trained_model_dir
         model.save_pretrained(model_save_path)
         logging.info(f"Trained model saved at {self.config.trained_model_dir}.....")
+
+        # return the evaluation data
+        return eval_dataloader

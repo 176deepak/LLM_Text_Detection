@@ -54,16 +54,10 @@ class ModelTrainerConfig:
     # Number of warm-up steps for the learning rate scheduler
     num_warmup_steps: int
     
-# Data class for ModelEvaluationConfig (currently commented out)
-# @dataclass(frozen=True)
-# class ModelEvaluationConfig:
-#     # Root directory for model evaluation
-#     root_dir: Path
-#     # Path to the data file used for evaluation
-#     data_path: Path
-#     # Path to the trained model for evaluation
-#     model_path: Path
-#     # Path to the tokenizer used for evaluation
-#     tokenizer_path: Path
-#     # Name of the metric file
-#     metric_file_name: Path
+
+@dataclass(frozen=True)
+class ModelEvaluationConfig:
+    # Root directory for model evaluation
+    root_dir: Path
+    # evaluation report path
+    evaluation_file: Path

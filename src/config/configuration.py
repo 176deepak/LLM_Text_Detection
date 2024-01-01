@@ -76,3 +76,11 @@ class ConfigurationManager:
         )
         # Return the instantiated ModelTrainerConfig object
         return model_training_config
+
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.model_evaluation
+        create_dirs([config.evaluation_dir])
+
+        model_evaluation_config = ModelEvaluationConfig(root_dir=config.evaluation_dir, evaluation_file=config.evaluation_report)
+
+        return model_evaluation_config
