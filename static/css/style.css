@@ -16,9 +16,13 @@ h1{
 
 .div2{
     text-align: center;
-    background-color: white;
-    width: max-content;
     padding: 10px;
+    color: #CB6CE6;
+}
+
+h3{
+    text-align: center;
+    margin-top: 15%;
 }
 
 #text{

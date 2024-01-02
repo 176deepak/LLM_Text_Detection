@@ -8,9 +8,9 @@ from src.pipeline.model_evaluation_pipeline import ModelEvaluationPipeline
 from src.logger import logging
 from src.exception import CustomException
 
+
 # Define a constant for the stage name
 STAGE_NAME = "Data Ingestion"
-
 # Data Ingestion Stage
 try:
     logging.info(f"--------------------{STAGE_NAME} start--------------------")
