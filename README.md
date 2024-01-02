@@ -12,18 +12,16 @@ This is a Deep Learning based WebApp. That can detects🕵️ the text writer or
    3. `exception.py`: Code file for handling all exceptions occured during code execution.
    4. `utils`: Folder, for storing code files which contains all utility functions.
       1. `common.py`: Code file, contains utility functions.
-| entity-| 
-| __init__.py:
-| constants-|
-| __init__.py:
-| config-| 
-| __init__.py:
-| configuration.py:
-| components-|
-| __init__.py:
-| data_ingestion.py
-| data_transformation.py
-| model_training.py
+   5. `entity`: Folder, for storing files which contains the configurations variables or configuration classes for Application. 
+   6. `constants`: Folder contains files, which contains all constant file paths or .yaml files path.
+   7. `config`: Folder contains configuration files
+      1. `configuration.py`: Code file which extract all configurations from .yaml files or add configuration variables.
+   8. `components`: Folder, contains files for all stages of Model Development.
+      1. `data_ingestion.py`: Code file, load the datasets or data from database.
+      2. `data_transformation.py`: Code file, Which transform, clean, filter the loaded data and splits into train, test and validation splits.
+      3. `data_validation.py`: Code file, which validates the all splits.
+      4. `model_training.py`: Code file, Which trains the model on splited data.
+      5. `model_evaluation.py`: Code file, which evaluates the model on validation data and test data.
 | pipeline-| 
 | __init__.py:
 | data_ingestion_pipeline.py
