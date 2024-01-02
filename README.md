@@ -8,11 +8,10 @@ This is a Deep Learning based WebApp. That can detects🕵️ the text writer or
 - `requirements.txt`: File, contains all required library, modules. 
 - `src`: Folder contains main code files for model building.
    1. `__init__.py`: Constructor file, makes the src folder as project or module.
-| logger.py: 
-| exception.py:
-| utils-|
-| __init__.py:
-| __common.py:
+   2. `logger.py`: Code file for recording all project logs into seperate LOGs file. 
+   3. `exception.py`: Code file for handling all exceptions occured during code execution.
+   4. `utils`: Folder, for storing code files which contains all utility functions.
+      1. `common.py`: Code file, contains utility functions.
 | entity-| 
 | __init__.py:
 | constants-|
