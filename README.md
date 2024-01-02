@@ -22,34 +22,23 @@ This is a Deep Learning based WebApp. That can detects🕵️ the text writer or
       3. `data_validation.py`: Code file, which validates the all splits.
       4. `model_training.py`: Code file, Which trains the model on splited data.
       5. `model_evaluation.py`: Code file, which evaluates the model on validation data and test data.
-| pipeline-| 
-| __init__.py:
-| data_ingestion_pipeline.py
-| data_transformation_pipeline.py
-| model_training_pipeline.py
-| model_prediction_pipeline.py
-|config-|
-| config.yaml
-|notebooks-|
-| data_ingestion.ipynb
-| data_cleaner.ipynb
-| data_loader.ipynb
-| model_trainer.ipynb
-|main.py
-|app.py
-|params.yaml
-|templates-|
-| index.html
-|static-|
-| images-|
-| img1.jpg
-| video.mp4
-| etc...
-| CSS-|
-| style.css
-| JS-|
-| script.js
-
+   9. `pipeline`: Folder contains all stage pipeline files. 
+      1. `data_ingestion_pipeline.py`
+      2. `data_transformation_pipeline.py`
+      3. `data_validation_pipeline.py`
+      4. `model_training_pipeline.py`
+      5. `model_evaluation_pipeline.py`
+      6. `model_prediction_pipeline.py`
+   10. `config`: Folder contains .yaml files containing the configuration
+      1. `config.yaml`
+   11. `notebooks`: Folder, contains all research notebooks 
+   12. `main.py`: Code file, Entry point for model building.
+   13. `app.py`: Entry point for WebApplication or required for building an WebApplication.
+   14. `templates`: Folder, contains the all HTML files for WebApp
+   15. `static`: Folder, contains the all static files for WebApp.
+      1. `images`: Folder, stores all static images.
+      2. `CSS`: Folder, contains all styling files for HTML code.
+      3. `JS`: Folder contains all JavaScript files for HTML code.
 
 
 
