@@ -29,16 +29,16 @@ This is a Deep Learning based WebApp. That can detects🕵️ the text writer or
       4. `model_training_pipeline.py`
       5. `model_evaluation_pipeline.py`
       6. `model_prediction_pipeline.py`
-   10. `config`: Folder contains .yaml files containing the configuration
-      1. `config.yaml`
-   11. `notebooks`: Folder, contains all research notebooks 
-   12. `main.py`: Code file, Entry point for model building.
-   13. `app.py`: Entry point for WebApplication or required for building an WebApplication.
-   14. `templates`: Folder, contains the all HTML files for WebApp
-   15. `static`: Folder, contains the all static files for WebApp.
-      1. `images`: Folder, stores all static images.
-      2. `CSS`: Folder, contains all styling files for HTML code.
-      3. `JS`: Folder contains all JavaScript files for HTML code.
+- `config`: Folder contains .yaml files containing the configuration
+   1. `config.yaml`
+- `notebooks`: Folder, contains all research notebooks 
+- `main.py`: Code file, Entry point for model building.
+- `app.py`: Entry point for WebApplication or required for building an WebApplication.
+- `templates`: Folder, contains the all HTML files for WebApp
+- `static`: Folder, contains the all static files for WebApp.
+   1. `images`: Folder, stores all static images.
+   2. `CSS`: Folder, contains all styling files for HTML code.
+   3. `JS`: Folder contains all JavaScript files for HTML code.
 
 
 
