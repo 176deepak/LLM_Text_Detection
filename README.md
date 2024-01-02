@@ -3,7 +3,7 @@ This is a Deep Learning based WebApp. That can detects🕵️ the text writer or
 
 ## Project structure understanding:
 Project-|
-| README.md:
+        | README.md:
 | .gitignore:
 | setup.py: 
 | requirements.txt:
