@@ -6,8 +6,8 @@ This is a Deep Learning based WebApp. That can detects🕵️ the text writer or
 - `.gitignore`: File for writing all folders and files which is ignored by the version control system.  
 - `setup.py`: File, responsible for packaging the whole project. 
 - `requirements.txt`: File, contains all required library, modules. 
-`src`: Folder contains main code files for model building.
-  1. __init__.py: Constructor file, makes the src folder as project or module.
+- `src`: Folder contains main code files for model building.
+1. __init__.py: Constructor file, makes the src folder as project or module.
 | logger.py: 
 | exception.py:
 | utils-|
