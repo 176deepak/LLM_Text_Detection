@@ -40,5 +40,5 @@ This is a Deep Learning based WebApp. That can detects🕵️ the text writer or
    2. `CSS`: Folder, contains all styling files for HTML code.
    3. `JS`: Folder contains all JavaScript files for HTML code.
 
-
+[![YouTube](https://img.shields.io/badge/YouTube-Subscribe-red?style=for-the-badge&logo=youtube&logoColor=white)]
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/aLNp0U41N-w/0.jpg)](https://www.youtube.com/watch?v=aLNp0U41N-w)
