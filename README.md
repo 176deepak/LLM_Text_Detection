@@ -49,10 +49,11 @@ This is a Deep Learning based WebApp. That can detects🕵️ the text writer or
 
 `NOTE`: Here, this project is not deployed on any cloud service like aws, azure or any other. Later, I will deploy it. Or you can also help deploy this project on the cloud. 
 
-<center>
-Any of your suggestions are welcome.
-</center>
+<p align="center">
+  Any of your suggestions are welcome.
+</p>
 
-<center>
-Made with ❤️
-</center>
+<p align="center">
+  Made with ❤️
+</p>
+
