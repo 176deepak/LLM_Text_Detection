@@ -6,11 +6,11 @@ from src.pipeline.model_prediction_pipeline import PredictionPipeline
 '''
 Here, I will skip this step as I am using a CPU machine and I will train the model on the Colab notebook outside the local machine.
 '''
-try:
-    # run the command
-    os.system("python main.py")
-except Exception as e:
-    print("Training failed, Not done.")
+# try:
+#     # run the command
+#     os.system("python main.py")
+# except Exception as e:
+#     print("Training failed, Not done.")
 
 app = Flask(__name__)
 
