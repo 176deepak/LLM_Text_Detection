@@ -43,6 +43,6 @@ This is a Deep Learning based WebApp. That can detects🕵️ the text writer or
 ## Here is a sample video of the project
 <p align="center">
   <a href="https://www.youtube.com/watch?v=aLNp0U41N-w">
-    <img src="https://img.youtube.com/vi/aLNp0U41N-w/default.jpg" alt="IMAGE ALT TEXT HERE">
+    <img src="https://img.youtube.com/vi/aLNp0U41N-w/default.jpg" alt="IMAGE ALT TEXT HERE" style="width: 50%">
   </a>
 </p>
