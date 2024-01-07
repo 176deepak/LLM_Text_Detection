@@ -41,4 +41,4 @@ This is a Deep Learning based WebApp. That can detects🕵️ the text writer or
    3. `JS`: Folder contains all JavaScript files for HTML code.
 
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=aLNp0U41N-w)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/aLNp0U41N-w/0.jpg)](https://www.youtube.com/watch?v=aLNp0U41N-w)
