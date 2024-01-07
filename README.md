@@ -46,3 +46,13 @@ This is a Deep Learning based WebApp. That can detects🕵️ the text writer or
     <img src="https://img.youtube.com/vi/aLNp0U41N-w/default.jpg" alt="IMAGE ALT TEXT HERE" style="width: 50%">
   </a>
 </p>
+
+`NOTE`: Here, this project is not deployed on any cloud service like aws, azure or any other. Later, I will deploy it. Or you can also help deploy this project on the cloud. 
+
+<center>
+<span>Any of your suggestions are welcome.</span>
+</center>
+
+<center>
+Made with ❤️
+</center>
